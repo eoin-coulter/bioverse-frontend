@@ -21,7 +21,7 @@ export default function Signup() {
     e.preventDefault();
     try {
       const response = await axios.post<SignupResponse>(
-        "http://localhost:8000/signup/",
+        "${process.env.NEXT_PUBLIC_API_URL}/signup/",
         { username, pword, is_admin }
       );
       alert(response.data.message);
@@ -69,6 +69,7 @@ export default function Signup() {
                    }
                                                         onChange={(e) => setIsAdmin(e.target.checked) }
                                                     />
+                                                    Admin
         <Button
           variant="contained"
           color="primary"

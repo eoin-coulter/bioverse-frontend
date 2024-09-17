@@ -1,5 +1,6 @@
 export interface User {
     id: number;
     username: string;
-    isAdmin: boolean;
+    isAdmin?: boolean;
+    completed_questionnaires?: number
   }

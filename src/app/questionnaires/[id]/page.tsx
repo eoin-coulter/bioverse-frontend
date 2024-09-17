@@ -21,7 +21,7 @@ export default function QuestionnairePage() {
         const fetchQuestionnaireAndPreviousAnswers = async () => {
             try {
                 // Fetch questionnaire
-                const res = await fetch(`http://localhost:8000/questionnaire/${id}`);
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/questionnaire/${id}`);
                 const data: QuestionnaireQuestions = await res.json();
                 setQuestionnaire(data);
 
@@ -67,7 +67,7 @@ export default function QuestionnairePage() {
         userId: number,
         questionnaireId: number
     ): Promise<Answer[]> => {
-        const res = await fetch(`http://localhost:8000/previous-answers/${userId}/${questionnaireId}`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/previous-answers/${userId}/${questionnaireId}`);
         const previousAnswers = await res.json();
 
         return previousAnswers.map((item: any) => ({
@@ -131,7 +131,7 @@ export default function QuestionnairePage() {
 
     const submitAnswers = async (userId: number, questionnaireId: number, answers:Answer[]) => {
         try {
-            const res = await axios.post('http://localhost:8000/submit-answers/', {
+            const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/submit-answers/`, {
                 user_id: userId,
                 questionnaire_id: questionnaireId,
                 answers: answers

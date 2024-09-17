@@ -19,17 +19,21 @@ export default function Login() {
   const [username, setUsername] = useState<string>("");
   const [pword, setPassword] = useState<string>("");
   const router = useRouter();
+  const url = process.env.NEXT_PUBLIC_API_URL
+  console.log(url); // Make sure it's exactly as defined in the .env file
+  
+
+
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const response = await axios.post<LoginResponse>(
-        "http://localhost:8000/login/",
+        `${url}/login/`,
         { username, pword }
       );
-      alert(response.data.message);
 
-      Cookies.set('user', JSON.stringify(response.data.user), { expires: 7 }); 
+     Cookies.set('user', JSON.stringify(response.data.user), { expires: 7 }); 
      response.data.user.is_admin ? router.push('/admin-panel') :router.push("/questionnaires");
     } catch (error) {
       console.error("Login error:", error);
