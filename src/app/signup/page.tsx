@@ -3,7 +3,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { Box, TextField, Button, Typography } from "@mui/material";
+import { Box, TextField, Button, Typography, Checkbox } from "@mui/material";
 
 // Define the expected shape of the response from the API
 interface SignupResponse {
@@ -63,6 +63,12 @@ export default function Signup() {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
+        <Checkbox
+          checked={
+                  is_admin
+                   }
+                                                        onChange={(e) => setIsAdmin(e.target.checked) }
+                                                    />
         <Button
           variant="contained"
           color="primary"

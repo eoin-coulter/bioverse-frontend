@@ -28,11 +28,9 @@ export default function Login() {
         { username, pword }
       );
       alert(response.data.message);
-      Cookies.set('user', response.data.user, { expires: 7 });  // Set cookie for 7 days
-   
 
-
-      router.push("/dashboard");
+      Cookies.set('user', JSON.stringify(response.data.user), { expires: 7 }); 
+     response.data.user.is_admin ? router.push('/admin-panel') :router.push("/questionnaires");
     } catch (error) {
       console.error("Login error:", error);
       alert("Login failed");
