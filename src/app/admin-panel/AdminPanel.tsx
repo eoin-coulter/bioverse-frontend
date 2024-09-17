@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Box, Button, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@mui/material';
 import axios from 'axios';
 import { User } from '../models/User';
+import LogoutButton from '../LogoutButton';
 
 
 

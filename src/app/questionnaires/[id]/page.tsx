@@ -1,5 +1,6 @@
 'use client';
 
+import { QuestionInfo } from "@/app/models/Question";
 import { Answer, QuestionnaireQuestions } from "@/app/models/Questionnare";
 import { User } from "@/app/models/User";
 import { Box, Button, Card, CardActions, CardContent, Checkbox, FormControlLabel, FormGroup, TextField, Typography } from "@mui/material";
@@ -61,7 +62,7 @@ export default function QuestionnairePage() {
         };
 
         fetchQuestionnaireAndPreviousAnswers();
-    }, []);
+    });
 
     const fetchPreviousAnswers = async (
         userId: number,
@@ -70,7 +71,7 @@ export default function QuestionnairePage() {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/previous-answers/${userId}/${questionnaireId}`);
         const previousAnswers = await res.json();
 
-        return previousAnswers.map((item: any) => ({
+        return previousAnswers.map((item: QuestionInfo) => ({
             question_id: item.question_id,
             answer: item.user_answer.replace(/[{""}]/g, '')
             ,

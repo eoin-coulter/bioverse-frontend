@@ -6,3 +6,7 @@ export interface Question {
       options?: string[];
     };
   }
+export interface QuestionInfo {
+    question_id: string,
+    user_answer: string
+}
