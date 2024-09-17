@@ -1,8 +1,7 @@
 import React from 'react'
 import { Questionnaire } from '../models/Questionnare'
-import { Box, Button, Card, CardContent, Grid2, Typography } from '@mui/material';
+import { Box, Card, CardContent, Grid2, Typography } from '@mui/material';
 import Link from 'next/link';
-import { deleteCookie } from 'cookies-next';
 import LogoutButton from '../LogoutButton';
 
 

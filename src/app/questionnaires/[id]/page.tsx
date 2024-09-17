@@ -38,7 +38,7 @@ export default function QuestionnairePage() {
                     let answer;
                 
                     if (matchingPreviousAnswer && question.data.type === 'mcq') {
-                        let temp = matchingPreviousAnswer.answer as string;
+                        const temp = matchingPreviousAnswer.answer as string;
                         answer = temp.split(',').map((item) => item.trim());  // Trim any extra spaces
                     } else if (matchingPreviousAnswer) {
                         answer = matchingPreviousAnswer.answer;

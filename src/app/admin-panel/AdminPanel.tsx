@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react';
 import { Box, Button, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@mui/material';
 import axios from 'axios';
 import { User } from '../models/User';
-import { useRouter } from 'next/navigation';
-import LogoutButton from '../LogoutButton';
 
 
 
@@ -14,7 +12,6 @@ interface AdminPanelProps {
 
 export default function AdminPanel({ onUserSelect }: AdminPanelProps) {
   const [users, setUsers] = useState<User[]>([]);
-  const router = useRouter();
 
 
 
