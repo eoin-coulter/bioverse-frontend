@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BioverseApplication
 
-## Getting Started
+This is a full-stack web application where users can answer questionnaires and administrators can view user answers. The front end is built with **Next.js** and **Material UI**, while the back end is powered by **FastAPI** and **PostgreSQL**.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Frontend](#frontend)
+  - [Technologies](#frontend-technologies)
+  - [Installation and Running](#frontend-installation-and-running)
+- [Backend](#backend)
+  - [Technologies](#backend-technologies)
+  - [Installation and Running](#backend-installation-and-running)
+- [Docker Setup](#docker-setup)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Frontend
 
-## Learn More
+### Frontend Technologies
 
-To learn more about Next.js, take a look at the following resources:
+- **Next.js**: A React framework for server-side rendering and static site generation.
+- **Material UI**: A popular React UI framework for building modern, responsive UIs.
+- **TypeScript**: Adds type safety and improved tooling for JavaScript.
+- **Vercel**: The frontend is deployed on Vercel.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Frontend Installation and Running
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone the repository:
 
-## Deploy on Vercel
+2. Install dependencies:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   \`\`\`bash
+   npm install
+   \`\`\`
+3. Run the development server:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   \`\`\`bash
+   npm run dev
+   \`\`\`
+4. Access the frontend at \`http://localhost:3000\`.
+5. Build for production:
+
+   \`\`\`bash
+   npm run build
+   \`\`\`
+6. Run the production server:
+
+   \`\`\`bash
+   npm start
+   \`\`\`
+
+### Deployed Application
+
+The frontend is deployed on **Vercel** and can be accessed at:
+[[[https://your-vercel-url.vercel.app](https://your-vercel-url.vercel.app)
+](https://bioverse-frontend-lime.vercel.app/)](https://bioverse-frontend-lime.vercel.app/)
+---
+
+## Backend
+
+### Backend Technologies
+
+- **FastAPI**: A modern, fast web framework for building APIs with Python 3.7+.
+- **PostgreSQL**: A powerful, open-source relational database.
+- **Docker**: Used for containerization of both the API and PostgreSQL.
+- **Uvicorn**: ASGI server used to serve FastAPI.
+- **SQLAlchemy**: ORM for database interaction.
+
+### Backend Installation and Running
+
+1. Clone the repository:
+
+2. run init.sh script
+3. Create and set up the PostgreSQL database:
+
+   - Start PostgreSQL service.
+   - Create a new database and user as outlined in the steps above.
+
+4. The API will be available at \`http://localhost:8000\`.
+
+### Deployed Backend
+
+The backend is deployed on an EC2 instance. You can access the API at:
+\`18.201.199.226:8000\`
+
+---
+
+## Docker Setup
+
+The project uses **Docker Compose** to manage back-end services.
+
+1. Make sure Docker is installed and running on your machine.
+2. running the init script will create backend docker containers
+
+---
+
+
+
+## License
+
+This project is licensed under the MIT License. See the \`LICENSE\` file for details.
+
+---
+
