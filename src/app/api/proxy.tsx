@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import axios, from 'axios';
+import axios from 'axios';
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL; 
 
