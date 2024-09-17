@@ -9,8 +9,6 @@ export interface QuestionnaireQuestions extends Questionnaire {
 }
 
 
-
-
 export interface Answer {
     id?:number
     question_id: number;

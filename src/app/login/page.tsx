@@ -20,7 +20,6 @@ export default function Login() {
   const [pword, setPassword] = useState<string>("");
   const router = useRouter();
   const url = process.env.NEXT_PUBLIC_API_URL
-  console.log(url); // Make sure it's exactly as defined in the .env file
   
 
 
