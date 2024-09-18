@@ -62,7 +62,7 @@ export default function QuestionnairePage() {
         };
 
         fetchQuestionnaireAndPreviousAnswers();
-    });
+    }, [id, user.id]);
 
     const fetchPreviousAnswers = async (
         userId: number,
