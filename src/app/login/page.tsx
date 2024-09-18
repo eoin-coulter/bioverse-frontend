@@ -19,6 +19,7 @@ export default function Login() {
   const [username, setUsername] = useState<string>("");
   const [pword, setPassword] = useState<string>("");
   const router = useRouter();
+  const url = process.env.NEXT_PUBLIC_API_URL
   
 
 
@@ -27,7 +28,7 @@ export default function Login() {
     e.preventDefault();
     try {
       const response = await axios.post<LoginResponse>(
-        `/api/proxy/login/`,
+        `${url}/login/`,
         { username, pword }
       );
 
